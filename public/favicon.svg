@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <!-- Monitor -->
+  <rect x="15" y="10" width="70" height="50" rx="4" fill="url(#grad)"/>
+  <rect x="20" y="15" width="60" height="40" rx="2" fill="#1e293b"/>
+  <!-- Code lines -->
+  <rect x="25" y="22" width="20" height="3" rx="1" fill="#60a5fa"/>
+  <rect x="25" y="28" width="35" height="3" rx="1" fill="#a78bfa"/>
+  <rect x="30" y="34" width="25" height="3" rx="1" fill="#34d399"/>
+  <rect x="30" y="40" width="30" height="3" rx="1" fill="#60a5fa"/>
+  <rect x="25" y="46" width="15" height="3" rx="1" fill="#f472b6"/>
+  <!-- Stand -->
+  <rect x="40" y="60" width="20" height="8" fill="url(#grad)"/>
+  <rect x="30" y="68" width="40" height="6" rx="2" fill="url(#grad)"/>
+  <!-- Cursor blink -->
+  <rect x="43" y="46" width="2" height="3" fill="#fbbf24"/>
+</svg>

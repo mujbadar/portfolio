@@ -191,7 +191,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           {/* Sub-projects (for DMN) */}
           {project.hasSubProjects && project.subProjects && (
             <div className="mb-8">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Projects Within This Role</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Hightlights Within This Role</h3>
               <div className="space-y-4">
                 {project.subProjects.map((subProject) => (
                   <div
