@@ -21,6 +21,33 @@ export const projects = [
       "Implemented CI/CD pipelines reducing deployment failures by 40%"
     ],
     type: "Professional",
+    hasSubProjects: true,
+    subProjects: [
+      {
+        id: "dmn-main",
+        title: "DallasNews.com",
+        description: "Core news platform serving millions of readers. Led frontend development and backend logic including content taxonomy systems.",
+        tech: ["React", "Node.js", "PostgreSQL"],
+        liveUrl: "https://www.dallasnews.com/",
+        screenshots: [], // Add image paths here: ["/screenshots/dmn-1.png", "/screenshots/dmn-2.png"]
+      },
+      {
+        id: "dmn-localgraf",
+        title: "LocalGraf",
+        description: "Event submission platform where organizations across DFW submit local events. Built React-Admin moderation dashboard for editorial approval before publishing to DMN readers.",
+        tech: ["React", "React-Admin", "Node.js", "PostgreSQL"],
+        liveUrl: null,
+        screenshots: [], // Add image paths here
+      },
+      {
+        id: "dmn-sportsgraf",
+        title: "SportsGraf",
+        description: "Live sports streaming platform for DFW high school games. Real-time player statistics, game scores, and live video streaming integration.",
+        tech: ["React", "Node.js", "WebSockets", "Streaming APIs"],
+        liveUrl: null,
+        screenshots: [], // Add image paths here
+      },
+    ],
   },
   {
     id: 2,
@@ -32,6 +59,11 @@ export const projects = [
       "Designed Postgres schema, RBAC, audit logs, and concurrency-safe scheduling logic"
     ],
     type: "Consulting",
+    hasSubProjects: false,
+    liveUrl: "https://fronterascheduling.com/login",
+    liveUrlNote: "Production access restricted by client",
+    github: null,
+    screenshots: [], // Add image paths here
   },
   {
     id: 3,
@@ -43,17 +75,44 @@ export const projects = [
       "Built loop-prevention logic and webhook orchestration"
     ],
     type: "Independent",
+    hasSubProjects: false,
+    liveUrl: "https://testflight.apple.com/join/BAfhBBwZ",
+    liveUrlLabel: "TestFlight",
+    liveUrlNote: "iOS TestFlight beta",
+    github: null,
+    screenshots: [], // Add image paths here
   },
   {
     id: 4,
     title: "Neighborhood Patrol Platform",
-    description: "Grassroots founder of a neighborhood patrol / association program to address local safety concerns. Designed and deployed live platform for patrol coordination and incident reporting.",
-    tech: ["React", "Node.js", "PostgreSQL", "REST APIs"],
+    description: "Grassroots founder of a neighborhood patrol / association program to address local safety concerns. Built both a public-facing static site and a members-only React/Next.js application.",
+    tech: ["React", "Next.js", "Node.js", "PostgreSQL", "Traccar"],
     highlights: [
-      "Built React + API platform for patrol coordination",
-      "Incident reporting system used by local residents"
+      "Built static public site for neighborhood association",
+      "Developed members-only app with live officer tracking via Traccar",
+      "Schedule management, vacation watch requests, and officer contact system"
     ],
     type: "Independent",
+    hasSubProjects: true,
+    subProjects: [
+      {
+        id: "patrol-public",
+        title: "Public Website",
+        description: "React static site for the Westinwood Neighborhood Association providing information about the patrol program and community resources.",
+        tech: ["React", "Static Site"],
+        liveUrl: "https://westinwoodna.com",
+        screenshots: [],
+      },
+      {
+        id: "patrol-members",
+        title: "Members Patrol App",
+        description: "Members-only React/Next.js application featuring live officer GPS tracking via Traccar server, patrol schedules, vacation watch requests, and direct officer contact.",
+        tech: ["React", "Next.js", "Traccar", "PostgreSQL"],
+        liveUrl: "https://westinwoodna.com/patrol",
+        liveUrlNote: "Members-only access",
+        screenshots: [],
+      },
+    ],
   },
 ];
 
