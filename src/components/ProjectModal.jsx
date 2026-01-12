@@ -34,11 +34,11 @@ function ScreenshotGallery({ screenshots, title }) {
 
   return (
     <div className="relative group">
-      <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden">
+      <div className="relative bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center aspect-video w-full max-h-[70vh]">
         <img
           src={screenshots[currentIndex]}
           alt={`${title} screenshot ${currentIndex + 1}`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
       </div>
 
@@ -182,6 +182,37 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Articles / press links */}
+          {project.links && project.links.length > 0 && (
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Articles & Press</h3>
+              <ul className="space-y-3">
+                {project.links.map((link, index) => (
+                  <li key={index} className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 4.5L21 12l-7.5 7.5m-9-15L12 12l-7.5 7.5" />
+                    </svg>
+                    <div>
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary-600 dark:text-primary-400 font-medium hover:underline"
+                      >
+                        {link.label || link.url}
+                      </a>
+                      {link.note && (
+                        <p className="text-sm text-gray-500 dark:text-gray-500 mt-0.5">
+                          {link.note}
+                        </p>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>

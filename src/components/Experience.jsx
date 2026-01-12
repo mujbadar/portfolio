@@ -1,8 +1,8 @@
-import { experience, education } from '../data/content';
+import { experience, education, accomplishments } from '../data/content';
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative bg-gray-100/50 dark:bg-gray-900/50 overflow-hidden">
+    <section id="experience" className="relative isolate bg-gray-100/50 dark:bg-gray-900/50 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-primary-500/10 to-purple-500/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
@@ -13,7 +13,7 @@ export default function Experience() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 via-purple-500 to-primary-500 transform md:-translate-x-1/2" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 via-purple-500 to-primary-500 transform md:-translate-x-1/2 pointer-events-none" />
 
           <div className="space-y-12">
             {experience.map((job, index) => (
@@ -83,6 +83,50 @@ export default function Experience() {
             ))}
           </div>
         </div>
+
+        {/* Accomplishments */}
+        {accomplishments && accomplishments.length > 0 && (
+          <div className="mt-16 relative z-10 pointer-events-auto">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+              <svg className="w-6 h-6 mr-3 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v12m-6-6h12" />
+              </svg>
+              Accomplishments
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {accomplishments.map((item) => (
+                <div key={item.url} className="card flex flex-col gap-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                    {item.year && <span className="font-semibold text-gray-700 dark:text-gray-200">{item.year}</span>}
+                    {item.source && (
+                      <>
+                        <span>•</span>
+                        <span>{item.source}</span>
+                      </>
+                    )}
+                  </div>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-600 dark:text-primary-400 font-semibold hover:underline flex items-center gap-2"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 4.5L21 12l-7.5 7.5m-9-15L12 12l-7.5 7.5" />
+                    </svg>
+                    {item.title}
+                  </a>
+                  {item.note && (
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {item.note}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
   );
